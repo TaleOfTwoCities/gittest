@@ -31,16 +31,46 @@ function funk(myFunk,str) {
     
     //call back function
     
-var fs = require("fs");
+// var fs = require("fs");
 
-console.log("This is a sample to rename a file");
+// console.log("This is a sample to rename a file");
 
-fs.rename("aaa.txt","bbb.txt",function(err){
-    if (err){
-        return console.error(err);
-    }
-    console.log("aaa.txt has renamed as bbb.txt successfully")
+// fs.rename("aaa.txt","bbb.txt",function(err){
+//     if (err){
+//         return console.error(err);
+//     }
+//     console.log("aaa.txt has renamed as bbb.txt successfully")
+// });
+
+
+//EVENTS
+var events = require("events");
+
+var eventobj = new events.EventEmitter();
+
+eventobj.on('Event001',function(){
+    console.log("Event001 done");
+} );
+
+
+eventobj.on('Event002',function(){console.log("Event002 done")});
+
+eventobj.emit ('Event001');
+eventobj.emit ('Event002');
+
+
+//EventEmitter class
+
+console.log('You can see the next message in 6 seconds:');
+
+var EventEmitter = require("events");
+
+var eventObject = new EventEmitter();
+
+eventObject.on('DelayEvent',function(){
+    console.log("The event delays by 6000 seconds")
 });
 
-
-//EVENT
+setTimeout(function(){
+    eventObject.emit('DelayEvent');
+},6000);
