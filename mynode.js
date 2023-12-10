@@ -29,6 +29,7 @@ function funk(myFunk,str) {
     }
     funk( function(str){ console.log(str) }, "code more,sleep more" );  
     
+const { error } = require("console");
     //call back function
     
 // var fs = require("fs");
@@ -74,3 +75,43 @@ eventObject.on('DelayEvent',function(){
 setTimeout(function(){
     eventObject.emit('DelayEvent');
 },6000);
+
+
+////////////////////////////
+
+var events = require("events");
+
+var eventobjs = new events.EventEmitter();
+
+var listener1 = function(){
+    console.log("listener 1 run")
+}
+
+var listener2 =function(){
+    console.log("listener 2 run")
+}
+
+eventobjs.addListener('myEvent',listener1);
+eventobjs.addListener('myEvent',listener2);
+
+eventobjs.emit('myEvent');
+
+var number  = eventobjs.listenerCount('myEvent');
+
+console.log( number + " listeners run");
+
+eventobjs.removeListener('myEvent',listener1);
+
+console.log(  'listener1 has been removed');
+
+number = eventobjs.listenerCount('myEvent');
+
+console.log( number + " listeners run");
+
+console.log('done');
+
+//ERROR EVENT
+
+var obj = new events.EventEmitter()
+
+obj.emit('error');
