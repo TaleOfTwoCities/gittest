@@ -112,6 +112,16 @@ console.log('done');
 
 //ERROR EVENT
 
-var obj = new events.EventEmitter()
+// var obj = new events.EventEmitter()
 
-obj.emit('error');
+// obj.emit('error');
+
+//modules have been covered in another file
+
+// BUFFERS
+
+
+
+
+
+
