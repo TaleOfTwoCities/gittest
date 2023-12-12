@@ -73,3 +73,5 @@ console.log(buffer3.toString());
 
 var buffer5 = buffer3.slice(4, 16);
 console.log("the content of buffer3 is " + buffer5.toString());
+
+//More examples in modulefile.js
