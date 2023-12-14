@@ -3,6 +3,7 @@ var data = "read file stream : ";
 var obj = fs.createReadStream("myfile.txt");
 
 obj.setEncoding("utf8");
+
 obj.on("data", function (datas) {
   data += datas;
 });

@@ -39,3 +39,29 @@ console.log(buff2[6]);
 //buffer to json
 var json = buf.toJSON(buf);
 console.log(json);
+
+//read,write,pipe streams covered in separate files
+
+//_filename
+
+console.log(__filename);
+console.log(__dirname);
+
+//set time out
+
+function delay() {
+  console.log("Rust in 8 hours");
+}
+
+var t = setTimeout(delay, 3000);
+
+clearTimeout(t);
+
+console.log("The timer has been cleared out");
+
+//SET INTERVAL
+function interval() {
+  console.log("Keep running until i press ctrl + c");
+}
+
+setInterval(interval, 3000);
