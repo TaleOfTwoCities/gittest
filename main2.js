@@ -70,12 +70,33 @@ fs.open("myfile.txt", "w+", function (err, fd) {
 });
 
 //Delete files
-console.log("This is a sample for deleting files");
-fs.unlink("aaa.txt", function (err) {
+// console.log("This is a sample for deleting files");
+// fs.unlink("aaa.txt", function (err) {
+//   if (err) {
+//     return console.error(err);
+//   }
+//   console.log("The file has been deleted successfully");
+// });
+
+//HOUR 7
+//creating directory
+
+console.log(__dirname);
+
+// fs.readdir("/Users/hp/myNode/newDir", function (err, files) {
+//   if (err) {
+//     return console.error(err);
+//   }
+//   files.forEach(function (file) {
+//     console.log(file);
+//   });
+// });
+
+fs.rmdir("/Users/hp/myNode/newDir", function (err) {
   if (err) {
     return console.error(err);
   }
-  console.log("The file has been deleted successfully");
+  console.log("The folder 'newDir' is removed successfully!");
 });
 
-//HOUR 7
+//callbackify
