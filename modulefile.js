@@ -65,3 +65,16 @@ function interval() {
 }
 
 setInterval(interval, 3000);
+
+//callbackify
+//INSPECT
+var util = require("util");
+function Book() {
+  this.title = "Html";
+  this.when = "in";
+  this.number = "8";
+  this.unit = "Hours";
+}
+
+var obj = new Book();
+console.log(util.inspect(obj));

@@ -92,11 +92,35 @@ console.log(__dirname);
 //   });
 // });
 
-fs.rmdir("/Users/hp/myNode/newDir", function (err) {
-  if (err) {
-    return console.error(err);
-  }
-  console.log("The folder 'newDir' is removed successfully!");
-});
+// fs.rmdir("/Users/hp/myNode/newDir", function (err) {
+//   if (err) {
+//     return console.error(err);
+//   }
+//   console.log("The folder 'newDir' is removed successfully!");
+// });
 
-//callbackify
+//callbackify...research more
+
+// const util = require("util");
+// async function mainFunction() {
+//   return "ruby in 8 hours";
+// }
+
+// const cbFunction = util.callbackify(mainFunction);
+
+// cbFunction((err, data) => {
+//   if (err) throw err;
+//   console.log(data);
+// });
+
+//INSPECT
+var util = require("util");
+function Book() {
+  this.title = "Html";
+  this.when = "in";
+  this.number = "8";
+  this.unit = "Hours";
+}
+
+var obj = new Book();
+console.log(util.inspect(obj));
