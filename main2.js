@@ -99,28 +99,76 @@ console.log(__dirname);
 //   console.log("The folder 'newDir' is removed successfully!");
 // });
 
+//UTIL
+
 //callbackify...research more
 
-// const util = require("util");
-// async function mainFunction() {
-//   return "ruby in 8 hours";
-// }
-
-// const cbFunction = util.callbackify(mainFunction);
-
-// cbFunction((err, data) => {
-//   if (err) throw err;
-//   console.log(data);
-// });
-
-//INSPECT
 var util = require("util");
-function Book() {
+async function mainFunction() {
+  return "ruby in 8 hours";
+}
+
+const cbFunction = util.callbackify(mainFunction);
+
+cbFunction((err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+//Inspect
+function Books() {
   this.title = "Html";
   this.when = "in";
   this.number = "8";
-  this.unit = "Hours";
+  this.unit = "hours";
+}
+var obj = new Books();
+console.log(util.inspect(obj));
+
+//inherits
+
+function Super() {
+  this.value = "a + b";
+  a = "Linux shell";
+  b = " in 8 hours";
 }
 
-var obj = new Book();
-console.log(util.inspect(obj));
+function sub() {
+  this.value = a + b;
+}
+
+util.inherits(sub, Super);
+var objsuper = new Super();
+console.log(objsuper);
+
+var objsub = new sub();
+console.log(objsub);
+
+//IsArray
+
+var myArr = new Array();
+var arr1 = util.isArray(myArr);
+console.log(arr1);
+var arr2 = util.isArray(myArr);
+console.log(arr2);
+var arr3 = util.isArray(myArr);
+console.log(arr3);
+
+//IsDate
+
+var Data1 = util.isDate(new Date());
+console.log(Data1);
+var Data2 = util.isDate(Date());
+console.log(Data2);
+var Data3 = util.isDate("12/20/2023");
+console.log(Data3);
+
+//IsRegExp
+var dat1 = util.isRegExp(/Rust In 8 hours/);
+console.log(dat1);
+var dat2 = util.isRegExp(new RegExp("string"));
+console.log(dat2);
+var dat3 = util.isRegExp(12 / 20 / 20203);
+console.log(dat3);
+
+//More in main.js
